@@ -1,0 +1,27 @@
+include <iostream>
+using namespace std;
+
+int main() {
+    int numStudents;
+    cout << "Enter the number of students: ";
+    cin >> numStudents;
+
+    int *studentIDs = new int[numStudents];
+    double *grades = new double[numStudents];
+
+    for (int i = 0; i < numStudents; i++) {
+        cout << "Enter student ID and grade for student " << i + 1 << ": ";
+        cin >> studentIDs[i] >> grades[i];
+    }
+
+    double sum = 0;
+    for (int i = 0; i < numStudents; i++) {
+        sum += grades[i];
+    }
+    double average = sum / numStudents;
+    cout << "The average grade is: " << average << endl;
+
+    delete[] studentIDs;
+    delete[] grades;
+
+    return 0;
